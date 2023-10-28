@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VisibilityMeter : MonoBehaviour
 {
-    public float maxVisibility = 100f;  //The maximum visibility value
+    /*public float maxVisibility = 100f;  //The maximum visibility value
     public float increaseRate = 5f;    //Rate at which visibility increases
     public float decreaseRate = 5f;    //Rate at which visibility decreases
 
@@ -30,9 +30,9 @@ public class VisibilityMeter : MonoBehaviour
         if (playerInvisibility != null && enemySight != null)
         {
             bool isPlayerInvisible = playerInvisibility.IsPlayerInvisible();
-            bool environmentView = enemySight.EnviromentView();
+            bool enviromentView = enemySight.EnviromentView();
 
-            if (environmentView && !isPlayerInvisible)
+            if (enviromentView && !isPlayerInvisible)
             {
                 Debug.Log("Visibility Increased: " + currentVisibility);
                 //Increase visibility over time while the player is visible
@@ -43,6 +43,6 @@ public class VisibilityMeter : MonoBehaviour
 
             //Ensure visibility doesn't exceed the maximum
             currentVisibility = Mathf.Min(maxVisibility, currentVisibility);
-        }
+        }*/
     }
 

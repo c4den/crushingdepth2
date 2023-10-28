@@ -9,7 +9,9 @@ public class EnemySight : MonoBehaviour
     public LayerMask playerMask;        // Layer mask to detect the player
     public LayerMask obstacleMask;      // Layer mask for obstacles
     public PlayerInvisibility playerInvisibility; // Reference to the PlayerInvisibility script
-
+    public float maxVisibility = 100f;
+    public float increaseRate = 5f;
+    public float currentVisibility = 0f;
     void Start()
     {
         playerInvisibility = GameObject.FindWithTag("Player").GetComponent<PlayerInvisibility>();
@@ -38,6 +40,7 @@ public class EnemySight : MonoBehaviour
             EnviromentView();
         }
     }
+    
 
     public bool EnviromentView()
     {
@@ -54,6 +57,10 @@ public class EnemySight : MonoBehaviour
 
                 if (!Physics.Raycast(transform.position, dirToPlayer, dstToPlayer, obstacleMask))
                 {
+                    Debug.Log("Visibility Increased: " + currentVisibility);
+                    currentVisibility += increaseRate * Time.deltaTime;
+                    // Ensure visibility doesn't exceed the maximum
+                    currentVisibility = Mathf.Min(maxVisibility, currentVisibility);
                     Debug.Log("Player Detected!"); // Output a debug message when the player is seen.
                     Gizmos.color = Color.red; // Change Gizmos color when player is seen.
                     return true;
