@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PlayerInvisibility : MonoBehaviour
 {
-    public float invisibilityDuration = 5.0f; //Duration of invisibility in seconds
-    public KeyCode invisibilityKey = KeyCode.Space; //Key to toggle invisibility
-    private Renderer playerRenderer; //Reference to the player's renderer component
-    private bool isPlayerInvisible = false; //Flag to track player's invisibility state
+    public KeyCode invisibilityKey = KeyCode.Space; // Key to toggle invisibility
+    private Renderer playerRenderer; // Reference to the player's renderer component
+    private bool isPlayerInvisible = false; // Flag to track player's invisibility state
 
     private void Start()
     {
@@ -16,10 +15,10 @@ public class PlayerInvisibility : MonoBehaviour
 
     private void Update()
     {
-        //Check if the invisibility key is pressed
+        // Check if the invisibility key is pressed
         if (Input.GetKeyDown(invisibilityKey))
         {
-            //Toggle player's invisibility
+            // Toggle player's invisibility
             ToggleInvisibility();
         }
     }
@@ -28,30 +27,19 @@ public class PlayerInvisibility : MonoBehaviour
     {
         if (isPlayerInvisible)
         {
-            //Make the player visible again
+            // Make the player visible again
             playerRenderer.enabled = true;
             Debug.Log("Player is now visible.");
         }
         else
         {
-            //Make the player invisible
+            // Make the player invisible
             playerRenderer.enabled = false;
-            Debug.Log("Player is now invisible."); 
-            //Set a timer to make the player visible after the specified duration
-            Invoke("MakePlayerVisible", invisibilityDuration);
+            Debug.Log("Player is now invisible.");
         }
 
-        //Toggle the invisibility state
+        // Toggle the invisibility state
         isPlayerInvisible = !isPlayerInvisible;
-    }
-
-    private void MakePlayerVisible()
-    {
-        //Make the player visible again
-        playerRenderer.enabled = true;
-        Debug.Log("Player is now visible (invisibility timer expired).");
-        //Update the invisibility state
-        isPlayerInvisible = false;
     }
 
     public bool IsPlayerInvisible()

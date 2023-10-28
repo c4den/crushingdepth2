@@ -761,22 +761,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invisibilityDuration: 10
   invisibilityKey: 32
---- !u!114 &1273953424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273953416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3d16f3912905b24495d8b0d7a55fc0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxVisibility: 100
-  increaseRate: 5
-  decreaseRate: 5
-  currentVisibility: 0
 --- !u!1 &1508817853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,9 +1466,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2297636443017373014, guid: baf3935ce006c7d43b8cc1b3d5a1edbb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1273953423}
-    - targetCorrespondingSourceObject: {fileID: 2297636443017373014, guid: baf3935ce006c7d43b8cc1b3d5a1edbb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1273953424}
   m_SourcePrefab: {fileID: 100100000, guid: baf3935ce006c7d43b8cc1b3d5a1edbb, type: 3}
 --- !u!1001 &3630124104845530722
 PrefabInstance:
@@ -1517,6 +1498,14 @@ PrefabInstance:
     - target: {fileID: 757419363676426589, guid: 3f69f6ace80a66e41a0f08f75ac59d83, type: 3}
       propertyPath: obstacleMask.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757953043880257686, guid: 3f69f6ace80a66e41a0f08f75ac59d83, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757953043880257686, guid: 3f69f6ace80a66e41a0f08f75ac59d83, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7143336954481841135, guid: 3f69f6ace80a66e41a0f08f75ac59d83, type: 3}
       propertyPath: m_Name
