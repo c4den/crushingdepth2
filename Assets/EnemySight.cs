@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySight : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class EnemySight : MonoBehaviour
     public float increaseRate = 5f;
     public float decreaseRate = 5f;
     public float currentVisibility = 0f;
+    public Slider visibilitySlider;
     void Start()
     {
         playerInvisibility = GameObject.FindWithTag("Player").GetComponent<PlayerInvisibility>();
@@ -46,6 +48,10 @@ public class EnemySight : MonoBehaviour
             currentVisibility -= decreaseRate * Time.deltaTime;
             // Ensure visibility doesn't go below 0
             currentVisibility = Mathf.Max(0, currentVisibility);
+        }
+        if (visibilitySlider != null)
+        {
+            visibilitySlider.value = currentVisibility;
         }
     }
     
