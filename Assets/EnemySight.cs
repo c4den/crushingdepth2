@@ -11,6 +11,7 @@ public class EnemySight : MonoBehaviour
     public PlayerInvisibility playerInvisibility; // Reference to the PlayerInvisibility script
     public float maxVisibility = 100f;
     public float increaseRate = 5f;
+    public float decreaseRate = 5f;
     public float currentVisibility = 0f;
     void Start()
     {
@@ -38,6 +39,13 @@ public class EnemySight : MonoBehaviour
         if (!playerInvisibility.IsPlayerInvisible()) // Check if the player is not invisible
         {
             EnviromentView();
+        }
+        else
+        {
+            // Decrease visibility when the player is invisible
+            currentVisibility -= decreaseRate * Time.deltaTime;
+            // Ensure visibility doesn't go below 0
+            currentVisibility = Mathf.Max(0, currentVisibility);
         }
     }
     
