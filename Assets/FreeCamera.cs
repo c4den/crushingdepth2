@@ -1,3 +1,6 @@
+using Unity.VisualScripting;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FreeCameraController : MonoBehaviour
@@ -14,6 +17,8 @@ public class FreeCameraController : MonoBehaviour
     private bool isCameraControllable = true; // Flag to control camera rotation
     private bool isFloating = false; // Flag to control floating behavior
     private Vector3 randomRotationAxis;
+
+    bool inCooldown = false;
 
     void Start()
     {
@@ -88,6 +93,10 @@ public class FreeCameraController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) || Input.GetKey("joystick button 3")) // 0 is the button number for left mouse click
         {
+            if (inCooldown) return;
+
+            StartCoroutine(Cooldown());
+
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
             RaycastHit hit;
 
@@ -107,5 +116,12 @@ public class FreeCameraController : MonoBehaviour
     {
         // Draw the cursor at the center of the screen
         GUI.DrawTexture(new Rect((Screen.width - cursorTexture.width) / 2, (Screen.height - cursorTexture.height) / 2, cursorTexture.width, cursorTexture.height), cursorTexture);
+    }
+
+    private IEnumerator Cooldown()
+    {
+        inCooldown = true;
+        yield return new WaitForSeconds(1.0f);
+        inCooldown = false;
     }
 }

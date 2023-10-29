@@ -14,6 +14,8 @@ public class SubmersibleMovement : MonoBehaviour
     private bool isFloating = false; // Flag to control floating behavior
     private Vector3 randomDirection;
 
+    bool inCooldown = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -33,6 +35,10 @@ public class SubmersibleMovement : MonoBehaviour
         // Check if the spacebar is pressed to toggle floating behavior
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey("joystick button 1"))
         {
+            if (inCooldown) return;
+
+            StartCoroutine(Cooldown());
+
             isFloating = !isFloating;
             if (isFloating)
             {
@@ -64,5 +70,12 @@ public class SubmersibleMovement : MonoBehaviour
             rb.velocity = moveDirection * moveSpeed;
             transform.rotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
         }
+    }
+
+    private IEnumerator Cooldown()
+    {
+        inCooldown = true;
+        yield return new WaitForSeconds(1.0f);
+        inCooldown = false;
     }
 }
