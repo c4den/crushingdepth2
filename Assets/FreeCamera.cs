@@ -11,8 +11,6 @@ public class FreeCameraController : MonoBehaviour
     private Vector2 cursorHotspot;  // Center of the cursor texture
     public float rotationSpeed = 30.0f; // Rotation speed when floating
 
-    private float rotationX = 0;
-    private float rotationY = 0;
     private bool isCameraControllable = true; // Flag to control camera rotation
     private bool isFloating = false; // Flag to control floating behavior
     private Vector3 randomRotationAxis;
@@ -35,10 +33,9 @@ public class FreeCameraController : MonoBehaviour
     {
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
+
         if (isCameraControllable)
         {
-            float mouseX = Input.GetAxis("Mouse X");
-            float mouseY = Input.GetAxis("Mouse Y");
 
             if (!isFloating)
             {
