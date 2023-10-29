@@ -16,7 +16,7 @@ public class PlayerInvisibility : MonoBehaviour
     private void Update()
     {
         // Check if the invisibility key is pressed
-        if (Input.GetKeyDown(invisibilityKey))
+        if (Input.GetKeyDown(invisibilityKey) || Input.GetKey("joystick button 1"))
         {
             // Toggle player's invisibility
             ToggleInvisibility();

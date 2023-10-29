@@ -24,14 +24,14 @@ public class SubmersibleMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKey("joystick button 7"))
         {
             print("Quit game");
             Application.Quit();
         }
 
         // Check if the spacebar is pressed to toggle floating behavior
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey("joystick button 1"))
         {
             isFloating = !isFloating;
             if (isFloating)

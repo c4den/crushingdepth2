@@ -16,7 +16,7 @@ public class StaticChargeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetKey("joystick button 2"))
         {
             SendStaticCharge();
         }

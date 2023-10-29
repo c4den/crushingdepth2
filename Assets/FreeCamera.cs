@@ -33,6 +33,10 @@ public class FreeCameraController : MonoBehaviour
     {
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
+        if (mouseX <= 0.01f && mouseX >= -0.01f) mouseX = 0f;
+        if (mouseY <= 0.01f && mouseY >= -0.01f) mouseY = 0f;
+
+        mouseY *= -1f; // Invert controls
 
         if (isCameraControllable)
         {
@@ -82,7 +86,7 @@ public class FreeCameraController : MonoBehaviour
 
     void HandleMouseClick()
     {
-        if (Input.GetMouseButtonDown(0)) // 0 is the button number for left mouse click
+        if (Input.GetMouseButtonDown(0) || Input.GetKey("joystick button 3")) // 0 is the button number for left mouse click
         {
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
             RaycastHit hit;
