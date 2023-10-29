@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SubmersibleMovement : MonoBehaviour
 {
-    public float moveSpeed = 5.0f;
+    public float moveSpeed = 20.0f;
     public float rotateSpeed = 45.0f; // Rotation speed when not controlled by the player
     
     private Rigidbody rb;

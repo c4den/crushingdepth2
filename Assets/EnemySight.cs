@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class EnemySight : MonoBehaviour
 {
-    public float viewRadius = 15;       // Radius of the enemy's view
-    public float viewAngle = 90;        // Angle of the enemy's view
+    public float viewRadius = 500;       // Radius of the enemy's view
+    public float viewAngle = 180;        // Angle of the enemy's view
     public LayerMask playerMask;        // Layer mask to detect the player
     public LayerMask obstacleMask;      // Layer mask for obstacles
     public PlayerInvisibility playerInvisibility; // Reference to the PlayerInvisibility script
