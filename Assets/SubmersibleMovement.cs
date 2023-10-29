@@ -6,34 +6,57 @@ using UnityEngine;
 public class SubmersibleMovement : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
-
+    public float rotateSpeed = 45.0f; // Rotation speed when not controlled by the player
+    
     private Rigidbody rb;
     private Transform cameraTransform;
+    private bool areWASDKeysEnabled = true;
+    private bool isFloating = false; // Flag to control floating behavior
+    private Vector3 randomDirection;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        cameraTransform = Camera.main.transform; 
-
-        //Disables the rigidbody rotation and angular velocity
+        cameraTransform = Camera.main.transform;
         rb.freezeRotation = true;
         rb.angularVelocity = Vector3.zero;
     }
 
+    void Update()
+    {
+        // Check if the spacebar is pressed to toggle floating behavior
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isFloating = !isFloating;
+            if (isFloating)
+            {
+                // Set a random direction for floating
+                randomDirection = Random.insideUnitSphere;
+                randomDirection.y = 0;
+                randomDirection.Normalize();
+            }
+        }
+    }
+
     void FixedUpdate()
     {
-        //Handles movement
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        if (isFloating)
+        {
+            // Apply random direction and rotation for floating
+            rb.velocity = randomDirection * moveSpeed / 10;
+            transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+        }
+        else if (areWASDKeysEnabled)
+        {
+            // Handle movement when 'WASD' keys are enabled
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
 
-        //Calculate the movement vector based on the camera direction
-        Vector3 moveDirection = cameraTransform.TransformDirection(new Vector3(horizontalInput, 0, verticalInput));
-        moveDirection.Normalize();
+            Vector3 moveDirection = cameraTransform.TransformDirection(new Vector3(horizontalInput, 0, verticalInput));
+            moveDirection.Normalize();
 
-        //Apply movement
-        rb.velocity = moveDirection * moveSpeed;
-
-        //Update the character rotation to match the camera rotation
-        transform.rotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
+            rb.velocity = moveDirection * moveSpeed;
+            transform.rotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
+        }
     }
 }
