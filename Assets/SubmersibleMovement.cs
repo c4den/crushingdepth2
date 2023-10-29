@@ -24,6 +24,12 @@ public class SubmersibleMovement : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            print("Quit game");
+            Application.Quit();
+        }
+
         // Check if the spacebar is pressed to toggle floating behavior
         if (Input.GetKeyDown(KeyCode.Space))
         {
