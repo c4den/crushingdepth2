@@ -21,6 +21,7 @@ public class StaticChargeController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) || Input.GetKey("joystick button 2"))
         {
+            print("Static charge shot");
             SendStaticCharge();
         }
     }

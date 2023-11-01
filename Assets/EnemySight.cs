@@ -71,7 +71,7 @@ public class EnemySight : MonoBehaviour
 
                 if (!Physics.Raycast(transform.position, dirToPlayer, dstToPlayer, obstacleMask))
                 {
-                    Debug.Log("Visibility Increased: " + currentVisibility);
+                    //Debug.Log("Visibility Increased: " + currentVisibility);
                     currentVisibility += increaseRate * Time.deltaTime;
                     // Ensure visibility doesn't exceed the maximum
                     currentVisibility = Mathf.Min(maxVisibility, currentVisibility);
