@@ -38,14 +38,16 @@ public class FreeCameraController : MonoBehaviour
     {
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
-        if (mouseX <= 0.01f && mouseX >= -0.01f) mouseX = 0f;
-        if (mouseY <= 0.01f && mouseY >= -0.01f) mouseY = 0f;
 
-        mouseY *= -1f; // Invert controls
+        // Invert controls based on camera orientation
+        if (transform.localRotation.eulerAngles.x > 90 && transform.localRotation.eulerAngles.x < 270)
+        {
+            // Upside down, invert the left and right movement
+            mouseX *= -1;
+        }
 
         if (isCameraControllable)
         {
-
             if (!isFloating)
             {
                 rotationX -= mouseY * sensitivityY;
@@ -65,9 +67,6 @@ public class FreeCameraController : MonoBehaviour
                     isFloating = false;
                 }
             }
-
-            //rotationX = Mathf.Clamp(rotationX, -90, 90);
-            rotationY %= 360;
         }
 
         transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
