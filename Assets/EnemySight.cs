@@ -75,7 +75,7 @@ public class EnemySight : MonoBehaviour
                     currentVisibility += increaseRate * Time.deltaTime;
                     // Ensure visibility doesn't exceed the maximum
                     currentVisibility = Mathf.Min(maxVisibility, currentVisibility);
-                    Debug.Log("Player Detected!"); // Output a debug message when the player is seen.
+                    //Debug.Log("Player Detected!"); // Output a debug message when the player is seen.
                     Gizmos.color = Color.red; // Change Gizmos color when player is seen.
                     return true;
                     // The player is within the FOV, you can perform actions here.

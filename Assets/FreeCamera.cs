@@ -30,6 +30,7 @@ public class FreeCameraController : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
         HandleMouseMovement();
         HandleMouseClick();
     }
@@ -111,11 +112,11 @@ public class FreeCameraController : MonoBehaviour
         }
     }
 
-    void OnGUI()
-    {
-        // Draw the cursor at the center of the screen
-        GUI.DrawTexture(new Rect((Screen.width - cursorTexture.width) / 2, (Screen.height - cursorTexture.height) / 2, cursorTexture.width, cursorTexture.height), cursorTexture);
-    }
+    //void OnGUI()
+    //{
+    //    // Draw the cursor at the center of the screen
+    //    GUI.DrawTexture(new Rect((Screen.width - cursorTexture.width) / 2, (Screen.height - cursorTexture.height) / 2, cursorTexture.width, cursorTexture.height), cursorTexture);
+    //}
 
     private IEnumerator Cooldown()
     {

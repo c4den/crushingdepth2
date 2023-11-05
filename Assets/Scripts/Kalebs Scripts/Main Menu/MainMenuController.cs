@@ -31,7 +31,7 @@ public class MainMenuController : MonoBehaviour
     public void PlayGame()
     {
         print("Play game");
-        //SceneManager.LoadScene(gameplaySceneBuildIndex);
+        SceneManager.LoadScene(gameplaySceneBuildIndex);
     }
 
     public void QuitGame()
