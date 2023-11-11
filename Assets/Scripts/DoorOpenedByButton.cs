@@ -4,11 +4,29 @@ using UnityEngine;
 
 public class DoorOpenedByButton : MonoBehaviour
 {
+    Animator animator;
     bool isOpen = false;
-    public void OpenDoor()
+
+    private void Start()
     {
-        if (isOpen) return;
-        this.transform.Rotate(0, -90, 0);
-        isOpen = true;
+        animator = GetComponent<Animator>();
+    }
+
+    public void DoorInteract()
+    {
+        if (isOpen)
+        {
+            animator.Play("A_Door");
+
+
+            isOpen = false;
+        }
+        else
+        {
+            animator.Play("A_Door");
+
+
+            isOpen = true;
+        }
     }
 }

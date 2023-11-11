@@ -28,16 +28,18 @@ public class GenericPowerableController : MonoBehaviour, PowerableInterface
 
     void TurnOn()
     {
+        print("Turning on");
         isPowered = true;
         SetMaterial(Color.green);
-        FlipPowerEvent.Invoke();
+        FlipPowerEvent?.Invoke();
     }
 
     void TurnOff()
     {
+        print("Turning off");
         isPowered = false;
         SetMaterial(Color.red);
-        FlipPowerEvent.Invoke();
+        FlipPowerEvent?.Invoke();
     }
 
     void SetMaterial(Color color)
