@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EnemySight : MonoBehaviour
@@ -52,6 +53,12 @@ public class EnemySight : MonoBehaviour
         if (visibilitySlider != null)
         {
             visibilitySlider.value = currentVisibility;
+        }
+        if (currentVisibility == 100) 
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene("EndScreen");
         }
     }
     
