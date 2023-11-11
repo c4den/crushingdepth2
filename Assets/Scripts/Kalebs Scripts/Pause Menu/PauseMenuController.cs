@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
@@ -8,7 +10,10 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject inGameUI;
 
+    [SerializeField] GameObject resumeButton, quitButton;
+
     bool isPaused = false;
+    bool inCooldown = false;
 
 
     // Update is called once per frame
@@ -16,6 +21,10 @@ public class PauseMenuController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKey("joystick button 7"))
         {
+            if (inCooldown) return;
+
+            StartCoroutine(Cooldown());
+
             if (isPaused)
             {
                 Unpause();
@@ -39,6 +48,9 @@ public class PauseMenuController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;  // Unhides cursor
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 
     public void Unpause()
@@ -60,5 +72,12 @@ public class PauseMenuController : MonoBehaviour
         print("Quit to menu");
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
+    }
+
+    private IEnumerator Cooldown()
+    {
+        inCooldown = true;
+        yield return new WaitForSeconds(1.0f);
+        inCooldown = false;
     }
 }
