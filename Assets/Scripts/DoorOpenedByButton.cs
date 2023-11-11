@@ -16,14 +16,16 @@ public class DoorOpenedByButton : MonoBehaviour
     {
         if (isOpen)
         {
-            animator.Play("A_Door");
+            // Close it
+            animator.SetBool("Open", false);
 
 
             isOpen = false;
         }
         else
         {
-            animator.Play("A_Door");
+            // Open it
+            animator.SetBool("Open", true);
 
 
             isOpen = true;
