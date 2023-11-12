@@ -830,6 +830,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6175949997659349108, guid: 39e472a7f961d2746afb5d58a8ad35ec, type: 3}
   m_PrefabInstance: {fileID: 2038017202}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &118083922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6947060019150886660, guid: baf3935ce006c7d43b8cc1b3d5a1edbb, type: 3}
+  m_PrefabInstance: {fileID: 304750254}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &125887881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2407,6 +2412,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1063899379099986610, guid: baf3935ce006c7d43b8cc1b3d5a1edbb, type: 3}
+      propertyPath: m_Intensity
+      value: 200000
+      objectReference: {fileID: 0}
     - target: {fileID: 1958702194098594284, guid: baf3935ce006c7d43b8cc1b3d5a1edbb, type: 3}
       propertyPath: far clip plane
       value: 1e+9
@@ -2435,6 +2444,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4122047122852586047, guid: baf3935ce006c7d43b8cc1b3d5a1edbb, type: 3}
+      propertyPath: playerSpotlight
+      value: 
+      objectReference: {fileID: 118083922}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3646,7 +3659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &487191048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5668,17 +5681,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &760872148 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2885767000466853630, guid: baf3935ce006c7d43b8cc1b3d5a1edbb, type: 3}
-  m_PrefabInstance: {fileID: 304750254}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &761941256 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5063749856828330888, guid: 51c7d9d007ffb7f41ae8807680552d67, type: 3}
@@ -6757,7 +6759,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoorOpener: 0
-  door: {fileID: 0}
 --- !u!65 &884907908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11099,7 +11100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoorOpener: 0
-  door: {fileID: 0}
 --- !u!65 &1428709396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11814,7 +11814,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoorOpener: 1
-  door: {fileID: 1421757406}
 --- !u!65 &1493839203
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12382,7 +12381,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoorOpener: 0
-  door: {fileID: 0}
 --- !u!65 &1572598933
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14105,7 +14103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staticChargeController: {fileID: 304750258}
-  staticChargeUIText: {fileID: 760872148}
+  staticChargeUIText: {fileID: 0}
 --- !u!4 &1825701049
 Transform:
   m_ObjectHideFlags: 0
