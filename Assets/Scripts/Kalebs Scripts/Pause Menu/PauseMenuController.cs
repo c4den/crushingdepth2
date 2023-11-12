@@ -8,9 +8,10 @@ using UnityEngine.SceneManagement;
 public class PauseMenuController : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject howToPlayMenu;
     [SerializeField] GameObject inGameUI;
 
-    [SerializeField] GameObject resumeButton, quitButton;
+    [SerializeField] GameObject resumeButton, quitButton, howToPlayFirstOption;
 
     bool isPaused = false;
     bool inCooldown = false;
@@ -65,6 +66,25 @@ public class PauseMenuController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;  // Hide the default system cursor
+    }
+
+    public void HowToPlay()
+    {
+        pauseMenu.SetActive(false);
+
+        howToPlayMenu.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(howToPlayFirstOption);
+    }
+
+    public void ClosePanel(GameObject panel)
+    {
+        panel.SetActive(false);
+        pauseMenu.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 
     public void QuitToMenu()

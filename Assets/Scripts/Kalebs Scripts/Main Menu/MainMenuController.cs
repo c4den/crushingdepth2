@@ -8,12 +8,13 @@ public class MainMenuController : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject creditsPanel;
     public GameObject optionsPanel;
+    public GameObject howToPlayPanel;
 
-    [SerializeField] GameObject mainFirstOption, creditsFirstOption, optionsFirstOption;
+    [SerializeField] GameObject mainFirstOption, creditsFirstOption, optionsFirstOption, howToPlayFirstOption;
 
     private void Start()
     {
-        EventSystem.current.SetSelectedGameObject(null);
+        //EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(mainFirstOption);
     }
 
@@ -33,6 +34,15 @@ public class MainMenuController : MonoBehaviour
 
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionsFirstOption);
+    }
+
+    public void OpenHowToPlay()
+    {
+        mainMenuPanel.SetActive(false);
+        howToPlayPanel.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(howToPlayFirstOption);
     }
 
     public void ClosePanel(GameObject panelToClose)
