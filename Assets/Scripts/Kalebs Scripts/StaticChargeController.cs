@@ -7,7 +7,10 @@ public class StaticChargeController : MonoBehaviour
 {
     public bool hasCharge = true;
 
+    public GameObject chargeIndicator;
+
     bool inCooldown = false;
+
 
     GameObject cam;
 
@@ -21,7 +24,6 @@ public class StaticChargeController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) || Input.GetKey("joystick button 2"))
         {
-            print("Static charge shot");
             SendStaticCharge();
         }
     }
@@ -34,11 +36,22 @@ public class StaticChargeController : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity, ~LayerMask.GetMask("Player")))
         {
             if (hit.collider.gameObject.CompareTag("Powerable"))
             {
                 hasCharge = hit.collider.gameObject.GetComponent<PowerableInterface>().FlipPower(hasCharge);
+
+                if (hasCharge)
+                {
+                    // Turn red
+                    SetEmission(Color.red, chargeIndicator);
+                }
+                else
+                {
+                    // Turn black
+                    SetEmission(Color.black, chargeIndicator);
+                }
             }
         }
     }
@@ -48,5 +61,13 @@ public class StaticChargeController : MonoBehaviour
         inCooldown = true;
         yield return new WaitForSeconds(1.0f);
         inCooldown = false;
+    }
+
+    void SetEmission(Color color, GameObject obj)
+    {
+        var mat = obj.GetComponent<Renderer>();
+        mat.material.color = color;
+        mat.material.EnableKeyword("_EMISSION");
+        mat.material.SetColor("_EmissionColor", color);
     }
 }

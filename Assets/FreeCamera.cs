@@ -44,7 +44,7 @@ public class FreeCameraController : MonoBehaviour
         if (transform.localRotation.eulerAngles.x > 90 && transform.localRotation.eulerAngles.x < 270)
         {
             // Upside down, invert the left and right movement
-            mouseX *= -1;
+            //mouseX *= -1;
         }
 
         if (isCameraControllable)
@@ -57,6 +57,7 @@ public class FreeCameraController : MonoBehaviour
             else
             {
                 // Rotate the camera continuously
+                print("Drifting");
                 float randomX = Random.Range(-360f, 360f);
                 float randomY = Random.Range(-1f, 1f);
                 rotationX += randomX * rotationSpeed * Time.deltaTime;
@@ -70,8 +71,8 @@ public class FreeCameraController : MonoBehaviour
             }
         }
 
-        transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.parent.localRotation = Quaternion.Euler(0, rotationY, 0);
+        transform.localRotation = Quaternion.Euler(0, rotationY, rotationX);
+        //transform.parent.localRotation = Quaternion.Euler(0, rotationY, 0);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
