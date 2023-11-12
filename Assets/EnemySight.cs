@@ -16,6 +16,10 @@ public class EnemySight : MonoBehaviour
     public float decreaseRate = 5f;
     public float currentVisibility = 0f;
     public Slider visibilitySlider;
+    public float rotationSpeed = 30f; // Speed of the rotation
+    private float targetRotation1 = 290f; // First target rotation angle (in degrees)
+    private float targetRotation2 = 250f; // Second target rotation angle (in degrees)
+    private bool rotateClockwise = true; // Indicates the current rotation direction
     void Start()
     {
         playerInvisibility = GameObject.FindWithTag("Player").GetComponent<PlayerInvisibility>();
@@ -60,8 +64,11 @@ public class EnemySight : MonoBehaviour
             Cursor.visible = true;
             SceneManager.LoadScene("EndScreen");
         }
+        // Rotate the enemy's FOV
+        RotateFOV();
+
     }
-    
+
 
     public bool EnviromentView()
     {
@@ -91,6 +98,28 @@ public class EnemySight : MonoBehaviour
         }
 
         return false; // Return false when the player is not in the field of view
+    }
+
+    private void RotateFOV()
+    {
+        // Calculate the rotation step based on the rotation speed and frame time
+        float rotationStep = rotationSpeed * Time.deltaTime;
+
+        // Determine the rotation direction
+        int direction = rotateClockwise ? 1 : -1;
+
+        // Choose the target rotation based on the current rotation direction
+        float targetRotation = rotateClockwise ? targetRotation1 : targetRotation2;
+
+        // Rotate the FOV towards the target rotation
+        transform.Rotate(Vector3.up, rotationStep * direction);
+
+        // Check if the target rotation is reached
+        if (Mathf.Abs(transform.eulerAngles.y - targetRotation) < rotationStep)
+        {
+            // Change rotation direction
+            rotateClockwise = !rotateClockwise;
+        }
     }
 }
 
