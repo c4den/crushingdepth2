@@ -20,7 +20,7 @@ public class BlockInteraction : MonoBehaviour
         if (isDoorOpener)
         {
             door.DoorInteract(); // Call the DoorInteract method
-            audioSource.PlayOneShot(doorOpenSound);
+            if (doorOpenSound != null) audioSource.PlayOneShot(doorOpenSound);
             Debug.Log("Door Interaction Triggered");
         }
     }

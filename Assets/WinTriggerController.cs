@@ -11,7 +11,7 @@ public class WinTriggerController : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;  // Unhides cursor
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene("WinScreen");
         }
     }
 }

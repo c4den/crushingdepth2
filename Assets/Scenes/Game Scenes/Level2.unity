@@ -7381,7 +7381,7 @@ PrefabInstance:
     - target: {fileID: 9078737887831996834, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
       propertyPath: door
       value: 
-      objectReference: {fileID: 221713636}
+      objectReference: {fileID: 0}
     - target: {fileID: 9078737887831996834, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
       propertyPath: isDoorOpener
       value: 0
