@@ -9,6 +9,15 @@ public class GenericPowerableController : MonoBehaviour, PowerableInterface
 
     bool isPowered = false;
 
+    AudioSource audioSource;
+    public AudioClip powerOnClip;
+    public AudioClip powerOffClip;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public bool FlipPower(bool isPlayerStaticCharged)
     {
         if (isPowered && !isPlayerStaticCharged)
@@ -32,6 +41,8 @@ public class GenericPowerableController : MonoBehaviour, PowerableInterface
         isPowered = true;
         SetMaterial(Color.green);
         FlipPowerEvent?.Invoke();
+
+        PowerSound(powerOnClip);
     }
 
     void TurnOff()
@@ -40,10 +51,18 @@ public class GenericPowerableController : MonoBehaviour, PowerableInterface
         isPowered = false;
         SetMaterial(Color.red);
         FlipPowerEvent?.Invoke();
+
+        PowerSound(powerOffClip);
     }
 
     void SetMaterial(Color color)
     {
         this.GetComponent<Renderer>().material.SetColor("_Color", color);
     }
+
+    void PowerSound(AudioClip clip)
+    {
+
+    }
+
 }

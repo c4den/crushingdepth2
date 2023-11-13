@@ -5,11 +5,14 @@ using UnityEngine;
 public class DoorOpenedByButton : MonoBehaviour
 {
     Animator animator;
+    public AudioClip doorOpenSound;
+    AudioSource audioSource;
     bool isOpen = false;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void DoorInteract()
@@ -19,6 +22,7 @@ public class DoorOpenedByButton : MonoBehaviour
             // Close it
             animator.SetBool("Open", false);
 
+            PlaySound();
 
             isOpen = false;
         }
@@ -27,8 +31,14 @@ public class DoorOpenedByButton : MonoBehaviour
             // Open it
             animator.SetBool("Open", true);
 
+            PlaySound();
 
             isOpen = true;
         }
+    }
+
+    void PlaySound()
+    {
+        audioSource.PlayOneShot(doorOpenSound);
     }
 }
