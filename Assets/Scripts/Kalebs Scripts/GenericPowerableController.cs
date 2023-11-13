@@ -62,7 +62,7 @@ public class GenericPowerableController : MonoBehaviour, PowerableInterface
 
     void PowerSound(AudioClip clip)
     {
-
+        audioSource.PlayOneShot(clip);
     }
 
 }
