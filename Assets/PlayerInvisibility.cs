@@ -12,7 +12,7 @@ public class PlayerInvisibility : MonoBehaviour
 
     private void Start()
     {
-        playerSpotlight = transform.Find("SpotlightGameObjectName").gameObject;
+        //playerSpotlight = transform.Find("SpotlightGameObjectName").gameObject;
 
 
         // Ensure the playerSpotlight reference is not null

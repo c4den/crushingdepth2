@@ -37,7 +37,6 @@ public class GenericPowerableController : MonoBehaviour, PowerableInterface
 
     void TurnOn()
     {
-        print("Turning on");
         isPowered = true;
         SetMaterial(Color.green);
         FlipPowerEvent?.Invoke();
@@ -47,7 +46,6 @@ public class GenericPowerableController : MonoBehaviour, PowerableInterface
 
     void TurnOff()
     {
-        print("Turning off");
         isPowered = false;
         SetMaterial(Color.red);
         FlipPowerEvent?.Invoke();
