@@ -7487,8 +7487,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9078737887831996834, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: blockID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078737887831996834, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
       propertyPath: isDoorOpener
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4627764232658689200, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
@@ -31472,14 +31476,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hacking Door
       objectReference: {fileID: 0}
+    - target: {fileID: 5189591997337750000, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: blockID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189591997337750000, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: isDoorOpener
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8574336722054064423, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711521202784482493, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: blockID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711521202784482493, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: isDoorOpener
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9078737887831996834, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
       propertyPath: door
       value: 
       objectReference: {fileID: 795236243}
+    - target: {fileID: 9078737887831996834, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: blockID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9078737887831996834, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
       propertyPath: doorOpenSound
       value: 
@@ -39196,6 +39220,7 @@ MonoBehaviour:
   isDoorOpener: 0
   door: {fileID: 0}
   doorOpenSound: {fileID: 0}
+  blockID: 0
 --- !u!65 &1353459759
 BoxCollider:
   m_ObjectHideFlags: 0
