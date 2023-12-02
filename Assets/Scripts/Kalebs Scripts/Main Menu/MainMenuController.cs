@@ -20,10 +20,13 @@ public class MainMenuController : MonoBehaviour
     public Slider volumeSlider;
     Resolution[] resolutions;
 
+    public static int currentResolutionIndex = -1;
+
     private void Start()
     {
         //EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(mainFirstOption);
+
 
         // Resolution setup
         resolutions = Screen.resolutions;
@@ -47,6 +50,14 @@ public class MainMenuController : MonoBehaviour
 
         try
         {
+            if (currentResolutionIndex > -1)
+            {
+                print("Resolution index check true");
+                Resolution resolution = resolutions[MainMenuController.currentResolutionIndex];
+                Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+                resolutionDropdown.value = currentResolutionIndex;
+                resolutionDropdown.RefreshShownValue();
+            }
             volumeSlider.value = AudioListener.volume;
             invertToggle.isOn = FreeCameraController.invertUpDown;
         }
@@ -108,6 +119,8 @@ public class MainMenuController : MonoBehaviour
         Resolution resolution = resolutions[index];
 
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+
+        MainMenuController.currentResolutionIndex = index;
     }
 
     public void SetVolume(float value)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -46,6 +47,14 @@ public class PauseMenuController : MonoBehaviour
 
         try
         {
+            if (MainMenuController.currentResolutionIndex > -1)
+            {
+                print("Resolution index check true");
+                Resolution resolution = resolutions[MainMenuController.currentResolutionIndex];
+                Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+                resolutionDropdown.value = MainMenuController.currentResolutionIndex;
+                resolutionDropdown.RefreshShownValue();
+            }
             volumeSlider.value = AudioListener.volume;
             invertToggle.isOn = FreeCameraController.invertUpDown;
         }
@@ -149,11 +158,13 @@ public class PauseMenuController : MonoBehaviour
 
     public void SetResolution(int index)
     {
-        print("Changing resolution");
+        print("Pause menu changing resolution");
 
         Resolution resolution = resolutions[index];
 
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+
+        MainMenuController.currentResolutionIndex = index;
     }
 
     public void SetVolume(float value)
