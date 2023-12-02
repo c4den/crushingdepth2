@@ -1,6 +1,9 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -12,10 +15,34 @@ public class MainMenuController : MonoBehaviour
 
     [SerializeField] GameObject mainFirstOption, creditsFirstOption, optionsFirstOption, howToPlayFirstOption;
 
+    public Toggle invertToggle;
+    public TMP_Dropdown resolutionDropdown;
+    Resolution[] resolutions;
+
     private void Start()
     {
         //EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(mainFirstOption);
+
+        // Resolution setup
+        resolutions = Screen.resolutions;
+        resolutionDropdown.ClearOptions();
+        List<string> resolutionOptions = new List<string>();
+        int currentResolutionInd = 0;
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height;
+            resolutionOptions.Add(option);
+
+            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionInd = i;
+            }
+        }
+        resolutionDropdown.AddOptions(resolutionOptions);
+        resolutionDropdown.value = currentResolutionInd;
+        resolutionDropdown.RefreshShownValue();
+        FreeCameraController.invertUpDown = invertToggle.isOn;
     }
 
     public void OpenCredits()
@@ -64,5 +91,24 @@ public class MainMenuController : MonoBehaviour
     {
         print("Quit game");
         Application.Quit();
+    }
+
+    public void SetResolution(int index)
+    {
+        print("Changing resolution");
+
+        Resolution resolution = resolutions[index];
+
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void SetVolume(float value)
+    {
+        AudioListener.volume = value;
+    }
+
+    public void InvertUpDown(bool value)
+    {
+        FreeCameraController.invertUpDown = value;
     }
 }

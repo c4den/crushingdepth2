@@ -20,6 +20,8 @@ public class FreeCameraController : MonoBehaviour
 
     bool inCooldown = false;
 
+    public static bool invertUpDown = false;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -39,6 +41,8 @@ public class FreeCameraController : MonoBehaviour
     {
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
+
+        if (!invertUpDown) mouseY = -mouseY;
 
         // Invert controls based on camera orientation
         if (transform.localRotation.eulerAngles.x > 90 && transform.localRotation.eulerAngles.x < 270)

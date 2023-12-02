@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SubmersibleMovement : MonoBehaviour
@@ -15,6 +15,8 @@ public class SubmersibleMovement : MonoBehaviour
     private Vector3 randomDirection;
 
     bool inCooldown = false;
+
+    
 
     void Start()
     {
@@ -37,7 +39,7 @@ public class SubmersibleMovement : MonoBehaviour
             if (isFloating)
             {
                 // Set a random direction for floating
-                randomDirection = Random.insideUnitSphere;
+                randomDirection = UnityEngine.Random.insideUnitSphere;
                 randomDirection.y = 0;
                 randomDirection.Normalize();
             }
