@@ -17,6 +17,7 @@ public class MainMenuController : MonoBehaviour
 
     public Toggle invertToggle;
     public TMP_Dropdown resolutionDropdown;
+    public Slider volumeSlider;
     Resolution[] resolutions;
 
     private void Start()
@@ -43,6 +44,13 @@ public class MainMenuController : MonoBehaviour
         resolutionDropdown.value = currentResolutionInd;
         resolutionDropdown.RefreshShownValue();
         FreeCameraController.invertUpDown = invertToggle.isOn;
+
+        try
+        {
+            volumeSlider.value = AudioListener.volume;
+            invertToggle.isOn = FreeCameraController.invertUpDown;
+        }
+        catch { print("Try catch in start caught something"); }
     }
 
     public void OpenCredits()
