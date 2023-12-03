@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class OnOffController : MonoBehaviour
 {
     private UILogController logController;
-
+    [SerializeField] private Animator animator;
     public GameObject interactText;
     public GameObject onInd;
     public GameObject offInd;
@@ -18,6 +18,7 @@ public class OnOffController : MonoBehaviour
 
     bool isOn = false;
 
+    
     private void Start()
     {
         logController = GameObject.FindGameObjectWithTag("LogController").GetComponent<UILogController>();
@@ -44,6 +45,8 @@ public class OnOffController : MonoBehaviour
             interactText.SetActive(false);
             offInd.SetActive(true);
             isOn = false;
+
+            animator.SetBool("Powered", false);
         }
         else // if off
         {
@@ -53,6 +56,8 @@ public class OnOffController : MonoBehaviour
             interactText.SetActive(true);
             offInd.SetActive(false);
             isOn = true;
+
+            animator.SetBool("Powered", true);
         }
     }
 }

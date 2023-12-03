@@ -44,18 +44,20 @@ public class MainMenuController : MonoBehaviour
             }
         }
         resolutionDropdown.AddOptions(resolutionOptions);
-        resolutionDropdown.value = currentResolutionInd;
-        resolutionDropdown.RefreshShownValue();
         FreeCameraController.invertUpDown = invertToggle.isOn;
 
         try
         {
             if (currentResolutionIndex > -1)
             {
-                print("Resolution index check true");
                 Resolution resolution = resolutions[MainMenuController.currentResolutionIndex];
                 Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
                 resolutionDropdown.value = currentResolutionIndex;
+                resolutionDropdown.RefreshShownValue();
+            }
+            else
+            {
+                resolutionDropdown.value = currentResolutionInd;
                 resolutionDropdown.RefreshShownValue();
             }
             volumeSlider.value = AudioListener.volume;
@@ -121,6 +123,8 @@ public class MainMenuController : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
 
         MainMenuController.currentResolutionIndex = index;
+
+        print("Main menu changing res index to " + index);
     }
 
     public void SetVolume(float value)

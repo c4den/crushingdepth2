@@ -42,17 +42,20 @@ public class PauseMenuController : MonoBehaviour
             }
         }
         resolutionDropdown.AddOptions(resolutionOptions);
-        resolutionDropdown.value = currentResolutionInd;
         resolutionDropdown.RefreshShownValue();
 
         try
         {
             if (MainMenuController.currentResolutionIndex > -1)
             {
-                print("Resolution index check true");
                 Resolution resolution = resolutions[MainMenuController.currentResolutionIndex];
                 Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
                 resolutionDropdown.value = MainMenuController.currentResolutionIndex;
+                resolutionDropdown.RefreshShownValue();
+            }
+            else
+            {
+                resolutionDropdown.value = currentResolutionInd;
                 resolutionDropdown.RefreshShownValue();
             }
             volumeSlider.value = AudioListener.volume;
@@ -165,6 +168,7 @@ public class PauseMenuController : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
 
         MainMenuController.currentResolutionIndex = index;
+        print("Pause menu changing res index to " + index);
     }
 
     public void SetVolume(float value)
