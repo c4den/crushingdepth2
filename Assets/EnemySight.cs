@@ -17,8 +17,8 @@ public class EnemySight : MonoBehaviour
     public float currentVisibility = 0f;
     public Slider visibilitySlider;
     public float rotationSpeed = 30f; // Speed of the rotation
-    private float targetRotation1 = 290f; // First target rotation angle (in degrees)
-    private float targetRotation2 = 250f; // Second target rotation angle (in degrees)
+    private float targetRotation1 = 310f; // First target rotation angle (in degrees)
+    private float targetRotation2 = 230f; // Second target rotation angle (in degrees)
     private bool rotateClockwise = true; // Indicates the current rotation direction
     void Start()
     {
