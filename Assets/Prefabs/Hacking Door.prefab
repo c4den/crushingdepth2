@@ -122,9 +122,10 @@ MonoBehaviour:
   isDoorOpener: 1
   door: {fileID: 1394885440990632357}
   doorOpenSound: {fileID: 8300000, guid: 51675466d1721b645a3fd29af9edb7fc, type: 3}
-  buttonPressSound: {fileID: 8300000, guid: 19e74d3ff2fc32c479680e1671a41cf9, type: 3}
-  incorrectSequenceSound: {fileID: 8300000, guid: 685066eda2b48744d9ec5ce967d2f1ab, type: 3}
   blockID: 3
+  pressedMaterial: {fileID: 2100000, guid: 92d3f4b9af0322b43ba56adf8d72a93c, type: 2}
+  errorMaterial: {fileID: 2100000, guid: 5594c9df4fe07624e8bf7fd079131289, type: 2}
+  patternButton: {fileID: 0}
 --- !u!82 &7691046950027920278
 AudioSource:
   m_ObjectHideFlags: 0
@@ -508,9 +509,10 @@ MonoBehaviour:
   isDoorOpener: 0
   door: {fileID: 1394885440990632357}
   doorOpenSound: {fileID: 8300000, guid: 51675466d1721b645a3fd29af9edb7fc, type: 3}
-  buttonPressSound: {fileID: 8300000, guid: 19e74d3ff2fc32c479680e1671a41cf9, type: 3}
-  incorrectSequenceSound: {fileID: 8300000, guid: 685066eda2b48744d9ec5ce967d2f1ab, type: 3}
   blockID: 0
+  pressedMaterial: {fileID: 2100000, guid: 92d3f4b9af0322b43ba56adf8d72a93c, type: 2}
+  errorMaterial: {fileID: 2100000, guid: 5594c9df4fe07624e8bf7fd079131289, type: 2}
+  patternButton: {fileID: 0}
 --- !u!82 &5280091139664130621
 AudioSource:
   m_ObjectHideFlags: 0
@@ -744,7 +746,7 @@ Transform:
   - {fileID: 2690358050136252403}
   - {fileID: 2983398530293607613}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7126344659184596352
 GameObject:
@@ -868,9 +870,10 @@ MonoBehaviour:
   isDoorOpener: 1
   door: {fileID: 1394885440990632357}
   doorOpenSound: {fileID: 8300000, guid: 51675466d1721b645a3fd29af9edb7fc, type: 3}
-  buttonPressSound: {fileID: 8300000, guid: 19e74d3ff2fc32c479680e1671a41cf9, type: 3}
-  incorrectSequenceSound: {fileID: 8300000, guid: 685066eda2b48744d9ec5ce967d2f1ab, type: 3}
   blockID: 1
+  pressedMaterial: {fileID: 2100000, guid: 92d3f4b9af0322b43ba56adf8d72a93c, type: 2}
+  errorMaterial: {fileID: 2100000, guid: 5594c9df4fe07624e8bf7fd079131289, type: 2}
+  patternButton: {fileID: 0}
 --- !u!82 &2401113159831461143
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1194,9 +1197,10 @@ MonoBehaviour:
   isDoorOpener: 1
   door: {fileID: 1394885440990632357}
   doorOpenSound: {fileID: 8300000, guid: 51675466d1721b645a3fd29af9edb7fc, type: 3}
-  buttonPressSound: {fileID: 8300000, guid: 19e74d3ff2fc32c479680e1671a41cf9, type: 3}
-  incorrectSequenceSound: {fileID: 8300000, guid: 685066eda2b48744d9ec5ce967d2f1ab, type: 3}
   blockID: 2
+  pressedMaterial: {fileID: 2100000, guid: 92d3f4b9af0322b43ba56adf8d72a93c, type: 2}
+  errorMaterial: {fileID: 2100000, guid: 5594c9df4fe07624e8bf7fd079131289, type: 2}
+  patternButton: {fileID: 0}
 --- !u!82 &4955743351646262586
 AudioSource:
   m_ObjectHideFlags: 0
