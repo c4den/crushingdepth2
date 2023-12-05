@@ -22180,7 +22180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 757419363676426589, guid: 3f69f6ace80a66e41a0f08f75ac59d83, type: 3}
       propertyPath: viewAngle
-      value: 45
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 757419363676426589, guid: 3f69f6ace80a66e41a0f08f75ac59d83, type: 3}
       propertyPath: viewRadius
@@ -22228,7 +22228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7980343853562039682, guid: 3f69f6ace80a66e41a0f08f75ac59d83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 477
+      value: 701
       objectReference: {fileID: 0}
     - target: {fileID: 7980343853562039682, guid: 3f69f6ace80a66e41a0f08f75ac59d83, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30222,8 +30222,8 @@ Light:
   m_Color: {r: 0.9056604, g: 0.27709937, b: 0, a: 1}
   m_Intensity: 1000000
   m_Range: 1000
-  m_SpotAngle: 12.820234
-  m_InnerSpotAngle: 4.622309
+  m_SpotAngle: 28.346642
+  m_InnerSpotAngle: 20.148708
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -32984,6 +32984,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8a672a0e0f5aa5b41b37046590632d8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8a672a0e0f5aa5b41b37046590632d8e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 8a672a0e0f5aa5b41b37046590632d8e, type: 3}
       propertyPath: m_Materials.Array.data[0]
