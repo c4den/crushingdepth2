@@ -117,8 +117,8 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 0
     - _Cutoff: 0.5
-    - _Deformation_Scale: 1
-    - _Deformation_Strength: 0.5
+    - _Deformation_Scale: 4.97
+    - _Deformation_Strength: 18.26
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -127,7 +127,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Height_Variation_intensity: 2.5
+    - _Height_Variation_intensity: 3.34
     - _Metallic: 0
     - _Normal_Multiply: 2
     - _OcclusionStrength: 1
@@ -150,7 +150,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color_multiply: {r: 1, g: 1, b: 1, a: 0}
-    - _Deformation_Speed: {r: 1, g: 0.5, b: 0, a: 0}
+    - _Deformation_Speed: {r: 0.25, g: 0.1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []

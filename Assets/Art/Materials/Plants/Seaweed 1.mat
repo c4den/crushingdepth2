@@ -118,7 +118,7 @@ Material:
     - _Cull: 0
     - _Cutoff: 0.5
     - _Deformation_Scale: 2
-    - _Deformation_Strength: 8
+    - _Deformation_Strength: 287.36
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -127,6 +127,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Height_Variation_intensity: 1
     - _Metallic: 0
     - _Normal_Multiply: 2
     - _OcclusionStrength: 1
@@ -134,6 +135,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Roughness_Multiply: 0.263
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

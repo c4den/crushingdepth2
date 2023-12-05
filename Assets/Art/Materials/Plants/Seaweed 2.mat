@@ -117,8 +117,8 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 0
     - _Cutoff: 0.5
-    - _Deformation_Scale: 2
-    - _Deformation_Strength: 3
+    - _Deformation_Scale: 3.99
+    - _Deformation_Strength: 160.2
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -127,6 +127,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Height_Variation_intensity: 1
     - _Metallic: 0
     - _Normal_Multiply: 2
     - _OcclusionStrength: 1
