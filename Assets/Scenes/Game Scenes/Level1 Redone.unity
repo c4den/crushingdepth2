@@ -7737,9 +7737,10 @@ MonoBehaviour:
   isDoorOpener: 0
   door: {fileID: 0}
   doorOpenSound: {fileID: 0}
-  buttonPressSound: {fileID: 0}
-  incorrectSequenceSound: {fileID: 0}
   blockID: 0
+  pressedMaterial: {fileID: 0}
+  errorMaterial: {fileID: 0}
+  patternButton: {fileID: 0}
 --- !u!65 &884907908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12562,9 +12563,10 @@ MonoBehaviour:
   isDoorOpener: 0
   door: {fileID: 0}
   doorOpenSound: {fileID: 0}
-  buttonPressSound: {fileID: 0}
-  incorrectSequenceSound: {fileID: 0}
   blockID: 0
+  pressedMaterial: {fileID: 0}
+  errorMaterial: {fileID: 0}
+  patternButton: {fileID: 0}
 --- !u!65 &1428709396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13388,9 +13390,10 @@ MonoBehaviour:
   isDoorOpener: 1
   door: {fileID: 0}
   doorOpenSound: {fileID: 0}
-  buttonPressSound: {fileID: 0}
-  incorrectSequenceSound: {fileID: 0}
   blockID: 0
+  pressedMaterial: {fileID: 0}
+  errorMaterial: {fileID: 0}
+  patternButton: {fileID: 0}
 --- !u!65 &1493839203
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14037,9 +14040,10 @@ MonoBehaviour:
   isDoorOpener: 0
   door: {fileID: 0}
   doorOpenSound: {fileID: 0}
-  buttonPressSound: {fileID: 0}
-  incorrectSequenceSound: {fileID: 0}
   blockID: 0
+  pressedMaterial: {fileID: 0}
+  errorMaterial: {fileID: 0}
+  patternButton: {fileID: 0}
 --- !u!65 &1572598933
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15856,8 +15860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2234578461734152925, guid: 476032be1714c734ea785866c0f9107a, type: 3}
       propertyPath: logText
-      value: '-, PINK, THEN GREEN. WARNING: OPEN IN CASES OF EXTREME EMERGENCIES
-        ONLY.'
+      value: '-, RED, THEN GREEN. WARNING: OPEN IN CASES OF EXTREME EMERGENCIES ONLY.'
       objectReference: {fileID: 0}
     - target: {fileID: 4456857916319361820, guid: 476032be1714c734ea785866c0f9107a, type: 3}
       propertyPath: m_LocalPosition.x

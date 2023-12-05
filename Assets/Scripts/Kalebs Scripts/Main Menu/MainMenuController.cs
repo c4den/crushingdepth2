@@ -20,7 +20,7 @@ public class MainMenuController : MonoBehaviour
     public Slider volumeSlider;
     Resolution[] resolutions;
 
-    bool isMainMenu = false;
+    public bool isMainMenu = false;
 
     public static int currentResolutionIndex = -1;
 

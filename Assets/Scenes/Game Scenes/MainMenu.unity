@@ -2867,6 +2867,7 @@ MonoBehaviour:
   invertToggle: {fileID: 1021182079}
   resolutionDropdown: {fileID: 1192719277}
   volumeSlider: {fileID: 1409731511}
+  isMainMenu: 1
 --- !u!1 &1158540363
 GameObject:
   m_ObjectHideFlags: 0
