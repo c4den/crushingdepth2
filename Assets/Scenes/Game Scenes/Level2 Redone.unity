@@ -10282,6 +10282,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baf3935ce006c7d43b8cc1b3d5a1edbb, type: 3}
+--- !u!114 &581026966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4737807223473283414, guid: baf3935ce006c7d43b8cc1b3d5a1edbb, type: 3}
+  m_PrefabInstance: {fileID: 581026965}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &581026967 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4122047122852586047, guid: baf3935ce006c7d43b8cc1b3d5a1edbb, type: 3}
+  m_PrefabInstance: {fileID: 581026965}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf22699119b3974db1979ae1a060898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &581483594
 GameObject:
   m_ObjectHideFlags: 0
@@ -22171,7 +22193,7 @@ PrefabInstance:
     - target: {fileID: 757419363676426589, guid: 3f69f6ace80a66e41a0f08f75ac59d83, type: 3}
       propertyPath: visibilitySlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 581026966}
     - target: {fileID: 757419363676426589, guid: 3f69f6ace80a66e41a0f08f75ac59d83, type: 3}
       propertyPath: playerMask.m_Bits
       value: 64
@@ -22179,7 +22201,7 @@ PrefabInstance:
     - target: {fileID: 757419363676426589, guid: 3f69f6ace80a66e41a0f08f75ac59d83, type: 3}
       propertyPath: playerInvisibility
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 581026967}
     - target: {fileID: 757419363676426589, guid: 3f69f6ace80a66e41a0f08f75ac59d83, type: 3}
       propertyPath: obstacleMask.m_Bits
       value: 128

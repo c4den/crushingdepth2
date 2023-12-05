@@ -20,6 +20,8 @@ public class MainMenuController : MonoBehaviour
     public Slider volumeSlider;
     Resolution[] resolutions;
 
+    bool isMainMenu = false;
+
     public static int currentResolutionIndex = -1;
 
     private void Start()
@@ -27,6 +29,7 @@ public class MainMenuController : MonoBehaviour
         //EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(mainFirstOption);
 
+        if (!isMainMenu) return; 
 
         // Resolution setup
         resolutions = Screen.resolutions;
