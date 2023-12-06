@@ -20,6 +20,7 @@ public class EnemySight : MonoBehaviour
     private float targetRotation1 = 310f; // First target rotation angle (in degrees)
     private float targetRotation2 = 230f; // Second target rotation angle (in degrees)
     private bool rotateClockwise = true; // Indicates the current rotation direction
+    public AudioSource playerAudioSource;
     void Start()
     {
         playerInvisibility = GameObject.FindWithTag("Player").GetComponent<PlayerInvisibility>();
@@ -58,6 +59,14 @@ public class EnemySight : MonoBehaviour
         {
             visibilitySlider.value = currentVisibility;
         }
+        // Adjust the volume of the player's audio source based on currentVisibility
+        float normalizedVolume = currentVisibility / maxVisibility;
+        if (playerAudioSource != null)
+        {
+            // Adjust the volume even when currentVisibility is decreasing
+            playerAudioSource.volume = normalizedVolume;
+        }
+
         if (currentVisibility == 100) 
         {
             Cursor.lockState = CursorLockMode.None;
@@ -91,6 +100,12 @@ public class EnemySight : MonoBehaviour
                     currentVisibility = Mathf.Min(maxVisibility, currentVisibility);
                     //Debug.Log("Player Detected!"); // Output a debug message when the player is seen.
                     Gizmos.color = Color.red; // Change Gizmos color when player is seen.
+                                              // Adjust the volume of the player's audio source based on currentVisibility
+                    float normalizedVolume = currentVisibility / maxVisibility;
+                    if (playerAudioSource != null)
+                    {
+                        playerAudioSource.volume = normalizedVolume;
+                    }
                     return true;
                     // The player is within the FOV, you can perform actions here.
                 }
