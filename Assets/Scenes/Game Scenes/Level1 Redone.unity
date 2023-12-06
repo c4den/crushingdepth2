@@ -7737,6 +7737,8 @@ MonoBehaviour:
   isDoorOpener: 0
   door: {fileID: 0}
   doorOpenSound: {fileID: 0}
+  clickSound: {fileID: 0}
+  errorSound: {fileID: 0}
   blockID: 0
   pressedMaterial: {fileID: 0}
   errorMaterial: {fileID: 0}
@@ -12563,6 +12565,8 @@ MonoBehaviour:
   isDoorOpener: 0
   door: {fileID: 0}
   doorOpenSound: {fileID: 0}
+  clickSound: {fileID: 0}
+  errorSound: {fileID: 0}
   blockID: 0
   pressedMaterial: {fileID: 0}
   errorMaterial: {fileID: 0}
@@ -13390,6 +13394,8 @@ MonoBehaviour:
   isDoorOpener: 1
   door: {fileID: 0}
   doorOpenSound: {fileID: 0}
+  clickSound: {fileID: 0}
+  errorSound: {fileID: 0}
   blockID: 0
   pressedMaterial: {fileID: 0}
   errorMaterial: {fileID: 0}
@@ -14040,6 +14046,8 @@ MonoBehaviour:
   isDoorOpener: 0
   door: {fileID: 0}
   doorOpenSound: {fileID: 0}
+  clickSound: {fileID: 0}
+  errorSound: {fileID: 0}
   blockID: 0
   pressedMaterial: {fileID: 0}
   errorMaterial: {fileID: 0}
@@ -14474,15 +14482,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3316576448308423241, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.31
+      value: -0.46
       objectReference: {fileID: 0}
     - target: {fileID: 3316576448308423241, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.63
+      value: 1.668
       objectReference: {fileID: 0}
     - target: {fileID: 3316576448308423241, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.06
+      value: -0.117
       objectReference: {fileID: 0}
     - target: {fileID: 3316576448308423241, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14583,14 +14591,54 @@ PrefabInstance:
     - target: {fileID: 6650356424590974387, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 299a8ae10a821e749b576f40c83ef7b8, type: 2}
+      objectReference: {fileID: 2100000, guid: 5594c9df4fe07624e8bf7fd079131289, type: 2}
+    - target: {fileID: 6660732125204281248, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.396
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660732125204281248, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.631
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660732125204281248, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.206
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995537528429694935, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995537528429694935, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995537528429694935, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304740140871885579, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.395
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304740140871885579, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304740140871885579, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.173
+      objectReference: {fileID: 0}
     - target: {fileID: 7758721238263148238, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
       propertyPath: door
       value: 
       objectReference: {fileID: 1596206345}
     - target: {fileID: 7758721238263148238, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
-      propertyPath: isDoorOpener
+      propertyPath: blockID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7758721238263148238, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
+      propertyPath: isDoorOpener
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7758721238263148238, guid: c66c00372af008c4bae8e3feb93b45df, type: 3}
       propertyPath: doorOpenSound

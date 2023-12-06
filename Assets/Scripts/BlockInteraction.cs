@@ -7,6 +7,8 @@ public class BlockInteraction : MonoBehaviour
     public bool isDoorOpener; // A boolean to check if this block opens the door
     public DoorOpenedByButton door; // Reference to the DoorOpenedByButton script
     public AudioClip doorOpenSound;
+    public AudioClip clickSound;
+    public AudioClip errorSound;
     AudioSource audioSource;
 
     // Combination related variables
@@ -35,6 +37,9 @@ public class BlockInteraction : MonoBehaviour
             if (isDoorOpener)
             {
                 currentSequence.Add(blockID); // Add this block's ID to the sequence
+
+                // Play click sound
+                if (clickSound != null) audioSource.PlayOneShot(clickSound);
 
                 // Change the material of the clicked button to pressedMaterial
                 GetComponent<Renderer>().material = pressedMaterial;
@@ -96,6 +101,9 @@ public class BlockInteraction : MonoBehaviour
     }
     private void ShowErrorMaterial()
     {
+        // Play error sound
+        if (errorSound != null) audioSource.PlayOneShot(errorSound);
+
         // Change the material of the button to errorMaterial for a brief duration
         GetComponent<Renderer>().material = errorMaterial;
         StartCoroutine(ResetButtonColorAfterDelay()); // Reset button color after a short delay
